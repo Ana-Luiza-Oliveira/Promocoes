@@ -19,9 +19,9 @@ class _AuthFormState extends State<AuthForm> {
   final _formKey = GlobalKey<FormState>();
   final _formData = AuthFormData();
 
-  void _handleImagePick(File image) {
-    _formData.image = image;
-  }
+  //void _handleImagePick(File image) {
+  //  _formData.image = image;
+  //}
 
   void _showError(String msg) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -36,9 +36,9 @@ class _AuthFormState extends State<AuthForm> {
     final isValid = _formKey.currentState?.validate() ?? false;
     if (!isValid) return;
 
-    if (_formData.image == null && _formData.isSignup) {
-      return _showError('Imagem não selecionada!');
-    }
+    //if (_formData.image == null && _formData.isSignup) {
+    //  return _showError('Imagem não selecionada!');
+    //}
 
     widget.onSubmit(_formData);
   }
@@ -54,10 +54,10 @@ class _AuthFormState extends State<AuthForm> {
           child: Column(
             children: [
               if (_formData.isSignup)
-                UserImagePicker(
-                  onImagePick: _handleImagePick,
-                ),
-              if (_formData.isSignup)
+              //  UserImagePicker(
+              //    onImagePick: _handleImagePick,
+              //  ),
+              //if (_formData.isSignup)
                 TextFormField(
                   key: const ValueKey('name'),
                   initialValue: _formData.name,
